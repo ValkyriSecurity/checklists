@@ -1,4 +1,4 @@
-<h1>Valkyri's Wallet Security Checklist</h1>
+<h1>Valkyri's Wallet Security Checklist for Web Extensions</h1>
 
 <table>
   <tr>
@@ -59,25 +59,48 @@
   <!-- 3. PRIVATE KEY SECURITY -->
   <!-- ================================= -->
 
-  <tr>
-    <td rowspan="4">Private Key Security</td>
-    <td rowspan="4">Key Handling</td>
-    <td>Plaintext Storage</td>
-    <td>Raw keys stored without encryption</td>
-  </tr>
-  <tr>
-    <td>Weak Encryption</td>
-    <td>Custom or low-strength crypto</td>
-  </tr>
-  <tr>
-    <td>In-Memory Exposure</td>
-    <td>Keys not zeroized; lingering in RAM</td>
-  </tr>
-  <tr>
-    <td>Poor Key Lifecycle</td>
-    <td>Low entropy, predictable generation</td>
-  </tr>
+<tr>
+  <td rowspan="8">Private Key Security</td>
+  <td rowspan="8">Key Handling Weakness</td>
 
+  <td>Plaintext Key Storage</td>
+  <td>Keys stored unencrypted in files, localStorage, or configs</td>
+</tr>
+
+<tr>
+  <td>Weak Encryption</td>
+  <td>Use of weak, custom, or non-standard encryption algorithms</td>
+</tr>
+
+<tr>
+  <td>In-Memory Exposure</td>
+  <td>Keys retained in RAM or logs without secure zeroization</td>
+</tr>
+
+<tr>
+  <td>Poor Key Lifecycle</td>
+  <td>Low-entropy key generation, reuse, or improper rotation</td>
+</tr>
+
+<tr>
+  <td>Key Extraction Attacks</td>
+  <td>Exposure via browser/extension APIs, debug tools, or dev builds</td>
+</tr>
+
+<tr>
+  <td>Improper Backup & Recovery</td>
+  <td>Seed phrases or backups stored insecurely or exported without safeguards</td>
+</tr>
+
+<tr>
+  <td>Hardware Isolation Failure</td>
+  <td>Lack of secure enclave/HSM usage where required</td>
+</tr>
+
+<tr>
+  <td>Side-Channel Leakage</td>
+  <td>Key inference through timing, power, or observable UI behavior</td>
+</tr>
 
 
   <!-- ================================= -->
